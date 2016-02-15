@@ -1,0 +1,19 @@
+a, b, num = input().strip().split()
+
+
+def fib(num, fibs):
+    if num == 0 or num == 1:
+        fibs[num] = 1
+
+    if fibs[num] is None:
+        fibs[num] = fib(num-1, fibs) + fib(num-2, fibs)
+
+    return fibs[num]
+
+
+reach = 2
+fibs = []
+fibs[0] = a
+fibs[1] = b
+val = fib(int(num), fibs)
+print(val)
